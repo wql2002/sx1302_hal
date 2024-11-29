@@ -61,25 +61,26 @@
             "tx_enable": false
         },
         "chan_multiSF_All": {"spreading_factor_enable": [ 5, 6, 7, 8, 9, 10, 11, 12 ]},
-        "chan_multiSF_0": {"enable": true, "radio": 0, "if": -400000},  /* Freq : 903.9 MHz*/
-        "chan_multiSF_1": {"enable": true, "radio": 0, "if": -200000},  /* Freq : 904.1 MHz*/
-        "chan_multiSF_2": {"enable": true, "radio": 0, "if":  0},       /* Freq : 904.3 MHz*/
-        "chan_multiSF_3": {"enable": true, "radio": 0, "if":  200000},  /* Freq : 904.5 MHz*/
-        "chan_multiSF_4": {"enable": true, "radio": 1, "if": -300000},  /* Freq : 904.7 MHz*/
-        "chan_multiSF_5": {"enable": true, "radio": 1, "if": -100000},  /* Freq : 904.9 MHz*/
-        "chan_multiSF_6": {"enable": true, "radio": 1, "if":  100000},  /* Freq : 905.1 MHz*/
-        "chan_multiSF_7": {"enable": true, "radio": 1, "if":  300000},  /* Freq : 905.3 MHz*/
-        "chan_Lora_std":  {"enable": true, "radio": 0, "if":  300000, "bandwidth": 500000, "spread_factor": 8,						/* Freq : 904.6 MHz*/
-                           "implicit_hdr": false, "implicit_payload_length": 17, "implicit_crc_en": false, "implicit_coderate": 1},
-        "chan_FSK":       {"enable": false, "radio": 1, "if":  300000, "bandwidth": 125000, "datarate": 50000}						/* Freq : 868.8 MHz*/
+        "chan_multiSF_0": {"enable": true, "radio": 0, "if": -400000},  /* Freq : 903.9 MHz*/       
+        "chan_multiSF_1": {"enable": true, "radio": 0, "if": -200000},  /* Freq : 904.1 MHz*/       
+        "chan_multiSF_2": {"enable": true, "radio": 0, "if":  0},       /* Freq : 904.3 MHz*/       
+        "chan_multiSF_3": {"enable": true, "radio": 0, "if":  200000},  /* Freq : 904.5 MHz*/       
+        "chan_multiSF_4": {"enable": true, "radio": 1, "if": -300000},  /* Freq : 904.7 MHz*/       
+        "chan_multiSF_5": {"enable": true, "radio": 1, "if": -100000},  /* Freq : 904.9 MHz*/       
+        "chan_multiSF_6": {"enable": true, "radio": 1, "if":  100000},  /* Freq : 905.1 MHz*/       
+        "chan_multiSF_7": {"enable": true, "radio": 1, "if":  300000},  /* Freq : 905.3 MHz*/       
+        "chan_Lora_std":  {"enable": true, "radio": 0, "if":  300000, "bandwidth": 500000, "spread_factor": 8,                                              /* Freq : 904.6 MHz*/
+                           "implicit_hdr": false, "implicit_payload_length": 17, "implicit_crc_en": 
+false, "implicit_coderate": 1},
+        "chan_FSK":       {"enable": false, "radio": 1, "if":  300000, "bandwidth": 125000, "datarate": 50000}                                              /* Freq : 868.8 MHz*/
     },
 
     "gateway_conf": {
-        "gateway_ID": "AA555A0000000000",
+        "gateway_ID": "0016c001ff1679ac", /* change with gateway EUI */
         /* change with default server address/ports */
-        "server_address": "localhost",
-        "serv_port_up": 1730,
-        "serv_port_down": 1730,
+        "server_address": "sensing-infra.nam1.cloud.thethings.industries",
+        "serv_port_up": 1700,
+        "serv_port_down": 1700,
         /* adjust the following parameters for your network */
         "keepalive_interval": 10,
         "stat_interval": 30,
@@ -100,7 +101,17 @@
         "beacon_datarate": 9,
         "beacon_bw_hz": 125000,
         "beacon_power": 14,
-        "beacon_infodesc": 0
+        "beacon_infodesc": 0,
+        /* download the global_conf.json from TTN and paste this section */
+        "servers": [
+        {
+                "gateway_ID": "0016C001FF1679AC",
+                "server_address": "sensing-infra.nam1.cloud.thethings.industries",
+                "serv_port_up": 1700,
+                "serv_port_down": 1700,
+                "serv_enabled": true
+        }
+        ]
     },
 
     "debug_conf": {
